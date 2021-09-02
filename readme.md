@@ -1,8 +1,8 @@
 [![](https://jitpack.io/v/KangTaeJong98/Library.svg)](https://jitpack.io/#KangTaeJong98/Library)
 
-# Reduce boiler plate code for databinding and navigation components
+### Reduce boiler plate code for databinding and navigation components
 
-# 😊Introduce
+### 😊Introduce
 ### Before Code
 NoLibActivity.kt
 ```kotlin
@@ -46,20 +46,20 @@ class MainActivity : NavigationActivity<ActivityMainBinding>(
 )
 ```
 
-## Too Simple!!
+### Too Simple!!
 
-# 🐘Dependency
+### 🐘Dependency
 [more(Maven, sbt, leiningen)](https://jitpack.io/#KangTaeJong98/Library)
 ```kotlin
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 ```kotlin
-	dependencies {
-        implementation 'com.github.KangTaeJong98:Library:$version'
-	}
+dependencies {
+    implementation 'com.github.KangTaeJong98:Library:$version'
+}
 ```
