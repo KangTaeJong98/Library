@@ -1,7 +1,7 @@
 [![](https://jitpack.io/v/KangTaeJong98/Library.svg)](https://jitpack.io/#KangTaeJong98/Library)
 
 ### Reduce boiler plate code for databinding and navigation components
-
+***
 ### 😊Introduce
 ### Before Code
 NoLibActivity.kt
@@ -47,7 +47,7 @@ class MainActivity : NavigationActivity<ActivityMainBinding>(
 ```
 
 ### Too Simple!!
-
+***
 ### 🐘Dependency
 [more(Maven, sbt, leiningen)](https://jitpack.io/#KangTaeJong98/Library)
 ```kotlin
