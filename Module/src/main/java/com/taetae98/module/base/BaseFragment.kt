@@ -1,5 +1,7 @@
 package com.taetae98.module.base
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -10,6 +12,10 @@ abstract class BaseFragment : Fragment() {
         if (activity is AppCompatActivity) {
             activity.setSupportActionBar(toolbar)
         }
+    }
+
+    protected fun setResult(resultCode: Int = Activity.RESULT_CANCELED, data: Intent? = null) {
+        requireActivity().setResult(resultCode, data)
     }
 
     protected fun <T> getSystemService(serviceClass: Class<T>): T {
