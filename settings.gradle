@@ -8,6 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Library"
 include ':app'
-include ':Base'
-include ':Binding'
-include ':Navigation'
+include ':Module'
