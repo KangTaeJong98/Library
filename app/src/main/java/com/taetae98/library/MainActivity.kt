@@ -1,12 +1,9 @@
 package com.taetae98.library
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.taetae98.base.BaseActivity
+import com.taetae98.library.databinding.ActivityMainBinding
+import com.taetae98.navigation.NavigationActivity
 
-class MainActivity : BaseActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
-}
+class MainActivity : NavigationActivity<ActivityMainBinding>(
+    R.layout.activity_main,
+    R.id.nav_host
+)
