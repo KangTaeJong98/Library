@@ -2,6 +2,7 @@
 buildscript {
     ext {
         navigation_version = "2.3.5"
+        room_version = "2.3.0"
     }
 
     repositories {
@@ -12,7 +13,7 @@ buildscript {
         // Navigation
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigation_version"
 
-        classpath "com.android.tools.build:gradle:7.0.1"
+        classpath "com.android.tools.build:gradle:7.0.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
 
         // NOTE: Do not place your application dependencies here; they belong

@@ -41,6 +41,10 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
 
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
@@ -58,7 +62,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.taetae98.module'
-                version = '1.0.0'
+                version = '2.0.0'
             }
             debug(MavenPublication) {
                 // The following applies a component to this publication
@@ -66,7 +70,7 @@ afterEvaluate {
                 from components.debug
 
                 groupId = 'com.taetae98.module'
-                version = '1.0.0'
+                version = '2.0.0'
             }
         }
     }
