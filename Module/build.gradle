@@ -62,7 +62,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.taetae98.module'
-                version = '2.0.0'
+                version = '3.0.0'
             }
             debug(MavenPublication) {
                 // The following applies a component to this publication
@@ -70,7 +70,7 @@ afterEvaluate {
                 from components.debug
 
                 groupId = 'com.taetae98.module'
-                version = '2.0.0'
+                version = '3.0.0'
             }
         }
     }
