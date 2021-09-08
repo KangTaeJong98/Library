@@ -2,7 +2,23 @@
 
 ### Reduce boiler plate code for databinding and navigation components
 ***
-### 😊Introduce
+### 🐘Dependency
+[more(Maven, sbt, leiningen)](https://jitpack.io/#KangTaeJong98/Library)
+```kotlin
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+```kotlin
+dependencies {
+    implementation 'com.github.KangTaeJong98:Library:$version'
+}
+```
+***
+### 😊 Example
 ### Before Code
 NoLibActivity.kt
 ```kotlin
@@ -48,18 +64,21 @@ class MainActivity : NavigationActivity<ActivityMainBinding>(
 
 ### Too Simple!!
 ***
-### 🐘Dependency
-[more(Maven, sbt, leiningen)](https://jitpack.io/#KangTaeJong98/Library)
-```kotlin
-allprojects {
-    repositories {
-        ...
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-```kotlin
-dependencies {
-    implementation 'com.github.KangTaeJong98:Library:$version'
-}
-```
+### Now Support
+#### Base
+* BaseActivity
+* BaseBottomSheetDialogFragment
+* BaseDao
+* BaseDialogFragment
+* BaseRecyclerViewAdapter
+* BaseViewHolder
+
+#### Binding
+* BindingActivity
+* BindingBottomSheedDialogFragment
+* BindingDialogFragment
+* BindingRecyclerViewAdapter
+* BindingViewHolder
+
+#### Navigation
+* NavigationActivity
