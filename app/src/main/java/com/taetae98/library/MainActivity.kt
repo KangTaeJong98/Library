@@ -1,7 +1,7 @@
 package com.taetae98.library
 
 import com.taetae98.library.databinding.ActivityMainBinding
-import com.taetae98.module.library.navigation.NavigationActivity
+import com.taetae98.modules.library.navigation.NavigationActivity
 
 class MainActivity : NavigationActivity<ActivityMainBinding>(
     R.layout.activity_main,
