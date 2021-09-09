@@ -1,8 +1,8 @@
-package com.taetae98.module.binding
+package com.taetae98.module.library.binding
 
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.LifecycleOwner
-import com.taetae98.module.base.BaseViewHolder
+import com.taetae98.module.library.base.BaseViewHolder
 
 abstract class BindingViewHolder<T: Any, VB: ViewDataBinding>(
     protected val binding: VB,

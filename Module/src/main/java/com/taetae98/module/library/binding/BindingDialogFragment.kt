@@ -1,4 +1,4 @@
-package com.taetae98.module.binding
+package com.taetae98.module.library.binding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,12 +7,12 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.taetae98.module.base.BaseFragment
+import com.taetae98.module.library.base.BaseDialogFragment
 
-abstract class BindingFragment<VB: ViewDataBinding>(
+abstract class BindingDialogFragment<VB: ViewDataBinding>(
     @LayoutRes
     layoutRes: Int
-) : BaseFragment() {
+) : BaseDialogFragment() {
     protected val binding: VB by lazy {
         DataBindingUtil.inflate(layoutInflater, layoutRes, null ,false)
     }

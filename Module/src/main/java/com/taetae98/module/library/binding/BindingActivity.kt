@@ -1,10 +1,10 @@
-package com.taetae98.module.binding
+package com.taetae98.module.library.binding
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.taetae98.module.base.BaseActivity
+import com.taetae98.module.library.base.BaseActivity
 
 abstract class BindingActivity<VB: ViewDataBinding>(
     @LayoutRes

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.taetae98.library.database.AppDatabase
 import com.taetae98.library.databinding.FragmentMainBinding
 import com.taetae98.library.dto.TestDTO
-import com.taetae98.module.binding.BindingFragment
+import com.taetae98.module.library.binding.BindingFragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

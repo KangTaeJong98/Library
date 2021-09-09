@@ -1,4 +1,4 @@
-package com.taetae98.module.base
+package com.taetae98.module.library.base
 
 import android.graphics.drawable.Drawable
 import androidx.annotation.AnimRes

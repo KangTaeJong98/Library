@@ -1,4 +1,4 @@
-package com.taetae98.module.base
+package com.taetae98.module.library.base
 
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter

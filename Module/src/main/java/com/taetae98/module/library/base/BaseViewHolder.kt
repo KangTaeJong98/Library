@@ -1,4 +1,4 @@
-package com.taetae98.module.base
+package com.taetae98.module.library.base
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

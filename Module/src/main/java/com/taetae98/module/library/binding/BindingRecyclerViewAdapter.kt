@@ -1,8 +1,8 @@
-package com.taetae98.module.binding
+package com.taetae98.module.library.binding
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
-import com.taetae98.module.base.BaseRecyclerViewAdapter
+import com.taetae98.module.library.base.BaseRecyclerViewAdapter
 
 abstract class BindingRecyclerViewAdapter<T: Any>(
     private val viewLifecycleOwner: LifecycleOwner,

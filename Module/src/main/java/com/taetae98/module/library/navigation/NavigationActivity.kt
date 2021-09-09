@@ -1,4 +1,4 @@
-package com.taetae98.module.navigation
+package com.taetae98.module.library.navigation
 
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
@@ -8,7 +8,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.taetae98.module.binding.BindingActivity
+import com.taetae98.module.library.binding.BindingActivity
 
 abstract class NavigationActivity<VB: ViewDataBinding>(
     @LayoutRes
