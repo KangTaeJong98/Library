@@ -11,8 +11,8 @@ android {
     defaultConfig {
         minSdk 24
         targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "4.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -62,7 +62,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.taetae98.module'
-                version = '4.0.0'
+                version = '4.0.1'
             }
             debug(MavenPublication) {
                 // The following applies a component to this publication
@@ -70,7 +70,7 @@ afterEvaluate {
                 from components.debug
 
                 groupId = 'com.taetae98.module'
-                version = '4.0.0'
+                version = '4.0.1'
             }
         }
     }
