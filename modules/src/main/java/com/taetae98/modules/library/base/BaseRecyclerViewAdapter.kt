@@ -7,4 +7,9 @@ abstract class BaseRecyclerViewAdapter<T: Any>(diffCallback: DiffUtil.ItemCallba
     override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int) {
         holder.onBindViewHolder(getItem(position))
     }
+
+    override fun onBindViewHolder(holder: BaseViewHolder<T>, position: Int, payloads: MutableList<Any>) {
+        super.onBindViewHolder(holder, position, payloads)
+        holder.onBindViewHolder(getItem(position), payloads)
+    }
 }
