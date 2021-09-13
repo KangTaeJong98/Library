@@ -16,7 +16,7 @@ abstract class NavigationActivity<VB: ViewDataBinding>(
     @LayoutRes
     layoutRes: Int,
     @IdRes
-    navHostId: Int = R.id.nav_host,
+    navHostId: Int,
 ) : BindingActivity<VB>(layoutRes) {
     protected val navController by lazy {
         (supportFragmentManager.findFragmentById(navHostId) as NavHostFragment).navController
