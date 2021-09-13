@@ -64,18 +64,23 @@ class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_m
 ### Now Support
 #### Base
 * BaseActivity
-* BaseBottomSheetDialogFragment
-* BaseDao
+* BaseFragment
 * BaseDialogFragment
+* BaseBottomSheetDialogFragment
 * BaseRecyclerViewAdapter
 * BaseViewHolder
+* BaseDao
 
 #### Binding
 * BindingActivity
-* BindingBottomSheedDialogFragment
+* BindingFragment
 * BindingDialogFragment
+* BindingBottomSheetDialogFragment
 * BindingRecyclerViewAdapter
 * BindingViewHolder
 
 #### Navigation
 * NavigationActivity
+* NavigationFragment
+* NavigationDialogFragment
+* NavigationBottomSheetDialogFragment
