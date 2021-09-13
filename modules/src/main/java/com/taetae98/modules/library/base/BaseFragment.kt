@@ -14,15 +14,15 @@ abstract class BaseFragment : Fragment() {
         }
     }
 
-    protected fun setResult(resultCode: Int = Activity.RESULT_CANCELED, data: Intent? = null) {
+    protected open fun setResult(resultCode: Int = Activity.RESULT_CANCELED, data: Intent? = null) {
         requireActivity().setResult(resultCode, data)
     }
 
-    protected fun <T> getSystemService(serviceClass: Class<T>): T {
+    protected open fun <T> getSystemService(serviceClass: Class<T>): T {
         return requireContext().getSystemService(serviceClass)
     }
 
-    protected fun finish() {
+    protected open fun finish() {
         requireActivity().finish()
     }
 }

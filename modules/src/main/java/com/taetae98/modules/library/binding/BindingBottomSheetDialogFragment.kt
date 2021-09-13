@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.taetae98.modules.library.base.BaseBottomSheetDialogFragment
 
-class BindingBottomSheetDialogFragment<VB: ViewDataBinding>(
+abstract class BindingBottomSheetDialogFragment<VB: ViewDataBinding>(
     @LayoutRes
     layoutRes: Int
 ) : BaseBottomSheetDialogFragment() {
