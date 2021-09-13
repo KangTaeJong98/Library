@@ -9,13 +9,14 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.taetae98.modules.library.R
 import com.taetae98.modules.library.binding.BindingActivity
 
 abstract class NavigationActivity<VB: ViewDataBinding>(
     @LayoutRes
     layoutRes: Int,
     @IdRes
-    navHostId: Int,
+    navHostId: Int = R.id.nav_host,
 ) : BindingActivity<VB>(layoutRes) {
     protected val navController by lazy {
         (supportFragmentManager.findFragmentById(navHostId) as NavHostFragment).navController
