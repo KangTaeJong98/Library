@@ -13,6 +13,7 @@ abstract class BindingViewHolder<T: Any, VB: ViewDataBinding>(
     }
 
     override fun onBindViewHolder(item: T) {
+        super.onBindViewHolder(item)
         onBindViewDataBinding()
     }
 
