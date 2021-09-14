@@ -6,7 +6,7 @@ import com.taetae98.modules.library.base.BaseViewHolder
 
 abstract class BindingViewHolder<T: Any, VB: ViewDataBinding>(
     protected val binding: VB,
-    viewLifecycleOwner: LifecycleOwner
+    viewLifecycleOwner: LifecycleOwner? = null
 ) : BaseViewHolder<T>(binding.root) {
     init {
         binding.lifecycleOwner = viewLifecycleOwner

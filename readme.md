@@ -3,6 +3,7 @@
 ### Reduce boiler plate code for databinding and navigation components
 ***
 ### 🐘Dependency
+#### Latest Version : 5.1.1
 [more(Maven, sbt, leiningen)](https://jitpack.io/#KangTaeJong98/Library)
 ```kotlin
 allprojects {
