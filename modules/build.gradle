@@ -12,7 +12,7 @@ android {
         minSdk 24
         targetSdk 31
         versionCode 1
-        versionName "5.1.2"
+        versionName "6.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -65,7 +65,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.taetae98.modules.library'
-                version = '5.1.2'
+                version = '6.0.0'
             }
             debug(MavenPublication) {
                 // The following applies a component to this publication
@@ -73,7 +73,7 @@ afterEvaluate {
                 from components.debug
 
                 groupId = 'com.taetae98.modules.library'
-                version = '5.1.2'
+                version = '6.0.0'
             }
         }
     }

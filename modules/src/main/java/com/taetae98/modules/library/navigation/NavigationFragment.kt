@@ -18,7 +18,7 @@ abstract class NavigationFragment<VB: ViewDataBinding>(
         return findNavController().currentBackStackEntry?.savedStateHandle?.get<T>(key)
     }
 
-    protected open fun<T: Any> getResultLiveData(key: String, initialValue: T? = null): MutableLiveData<T>? {
-        return findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData(key, initialValue)
+    protected open fun<T: Any> getResultLiveData(key: String): MutableLiveData<T>? {
+        return findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData(key)
     }
 }
