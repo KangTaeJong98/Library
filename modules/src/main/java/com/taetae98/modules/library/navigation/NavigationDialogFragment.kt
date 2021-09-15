@@ -14,6 +14,6 @@ abstract class NavigationDialogFragment<VB: ViewDataBinding>(
     }
 
     protected open fun<T: Any> getResultValue(key: String): T? {
-        return findNavController().previousBackStackEntry?.savedStateHandle?.get<T>(key)
+        return findNavController().currentBackStackEntry?.savedStateHandle?.get<T>(key)
     }
 }

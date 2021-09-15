@@ -2,6 +2,7 @@ package com.taetae98.modules.library.navigation
 
 import androidx.annotation.LayoutRes
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import com.taetae98.modules.library.binding.BindingFragment
 
@@ -14,6 +15,10 @@ abstract class NavigationFragment<VB: ViewDataBinding>(
     }
 
     protected open fun<T: Any> getResultValue(key: String): T? {
-        return findNavController().previousBackStackEntry?.savedStateHandle?.get<T>(key)
+        return findNavController().currentBackStackEntry?.savedStateHandle?.get<T>(key)
+    }
+
+    protected open fun<T: Any> getResultLiveData(key: String, initialValue: T? = null): MutableLiveData<T>? {
+        return findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData(key, initialValue)
     }
 }

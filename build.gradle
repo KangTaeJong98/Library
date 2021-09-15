@@ -3,6 +3,7 @@ buildscript {
     ext {
         navigation_version = "2.3.5"
         room_version = "2.3.0"
+        selection_version = "1.2.0-alpha01"
     }
 
     repositories {
