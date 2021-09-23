@@ -12,7 +12,7 @@ android {
         minSdk 24
         targetSdk 31
         versionCode 1
-        versionName "6.0.0"
+        versionName "6.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -44,6 +44,8 @@ dependencies {
     // Room
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
 
     // Selection
     implementation "androidx.recyclerview:recyclerview-selection:$selection_version"
@@ -65,7 +67,7 @@ afterEvaluate {
                 from components.release
 
                 groupId = 'com.taetae98.modules.library'
-                version = '6.0.0'
+                version = '6.0.1'
             }
             debug(MavenPublication) {
                 // The following applies a component to this publication
@@ -73,7 +75,7 @@ afterEvaluate {
                 from components.debug
 
                 groupId = 'com.taetae98.modules.library'
-                version = '6.0.0'
+                version = '6.0.1'
             }
         }
     }

@@ -31,5 +31,10 @@ class TestDTOAdapter(viewLifecycleOwner: LifecycleOwner? = null) : BindingRecycl
         )
     }
 
-    inner class TestTDOHolder(binding: HolderDtoBinding, viewLifecycleOwner: LifecycleOwner?) : BindingViewHolder<TestDTO, HolderDtoBinding>(binding, viewLifecycleOwner)
+    inner class TestTDOHolder(binding: HolderDtoBinding, viewLifecycleOwner: LifecycleOwner?) : BindingViewHolder<TestDTO, HolderDtoBinding>(binding, viewLifecycleOwner) {
+        override fun onBindViewHolder(item: TestDTO) {
+            super.onBindViewHolder(item)
+            binding.testDto = item
+        }
+    }
 }

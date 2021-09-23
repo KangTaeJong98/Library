@@ -7,6 +7,9 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.taetae98.library.dao.TestDAO
 import com.taetae98.library.dto.TestDTO
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @Database(entities = [TestDTO::class], views = [], version = 1, exportSchema = true)
 abstract class AppDatabase : RoomDatabase() {

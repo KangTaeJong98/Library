@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.taetae98.library.adapter.TestDTOAdapter
 import com.taetae98.library.database.AppDatabase
 import com.taetae98.library.databinding.FragmentMainBinding
 import com.taetae98.library.dto.TestDTO
@@ -13,24 +14,51 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main) {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    private val appDatabase by lazy { AppDatabase.getInstance(requireContext()) }
+    private val testDTOAdapter by lazy { TestDTOAdapter() }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        appDatabase.dao().findAllLiveData().observe(viewLifecycleOwner) {
+            testDTOAdapter.submitList(it)
+        }
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
+        onCreateRecyclerView()
+        
+        return binding.root
+    }
 
+    private fun onCreateRecyclerView() {
+        with(binding.recyclerView) {
+            adapter = testDTOAdapter
+        }
+    }
 
+    override fun onCreateViewDataBinding() {
+        super.onCreateViewDataBinding()
+        binding.setOnAdd {
+            CoroutineScope(Dispatchers.IO).launch {
+                val index = testDTOAdapter.itemCount
+                val arrayList = ArrayList<TestDTO>()
+                repeat(5) {
+                    arrayList.add(
+                        TestDTO(
+                            data = "Data : ${index + it}"
+                        )
+                    )
+                }
 
-        CoroutineScope(Dispatchers.IO).launch {
-            val dao = AppDatabase.getInstance(requireContext()).dao()
-            val dto = TestDTO(data = "Hi")
-
-            dao.insert(dto)
-            dao.update(dto.copy(data = "Hello"))
-            dao.delete(dto)
+                appDatabase.dao().insert(arrayList)
+            }
         }
 
-        return binding.root
+        binding.setOnRemove {
+            CoroutineScope(Dispatchers.IO).launch {
+                appDatabase.dao().delete(testDTOAdapter.currentList)
+            }
+        }
     }
 }
