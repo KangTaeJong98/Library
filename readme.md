@@ -3,7 +3,7 @@
 ### Reduce boiler plate code for databinding and navigation components
 ***
 ### 🐘Dependency
-#### Latest Version : 6.0.1
+#### Latest Version : 7.0.0
 [more(Maven, sbt, leiningen)](https://jitpack.io/#KangTaeJong98/Library)
 ```kotlin
 allprojects {
@@ -60,6 +60,24 @@ MainActivity.kt
 class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_main)
 ```
 
+### PermissionManager
+MainActivity.kt
+```kotlin
+class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_main, R.id.nav_host) {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        PermissionManager.Builder(this)
+            .setOnGranted {
+                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
+            }
+            .setOnDenied {
+                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
+            }
+            .execute(arrayOf(Manifest.permission.CAMERA))
+    }
+}
+```
+
 ### Too Simple!!
 ***
 ### Now Support
@@ -77,7 +95,6 @@ class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_m
 * BindingFragment
 * BindingDialogFragment
 * BindingBottomSheetDialogFragment
-* BindingRecyclerViewAdapter
 * BindingViewHolder
 
 #### Navigation

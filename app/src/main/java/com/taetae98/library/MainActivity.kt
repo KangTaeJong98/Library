@@ -13,10 +13,10 @@ class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_m
         super.onCreate(savedInstanceState)
         PermissionManager.Builder(this)
             .setOnGranted {
-                Log.d("PASS", "$it")
+                Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
             }
             .setOnDenied {
-                Toast.makeText(this, "권한 요청 실패", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
             }
             .execute(arrayOf(Manifest.permission.CAMERA))
     }
