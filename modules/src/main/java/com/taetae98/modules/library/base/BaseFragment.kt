@@ -8,10 +8,7 @@ import androidx.fragment.app.Fragment
 
 abstract class BaseFragment : Fragment() {
     protected fun setSupportActionBar(toolbar: Toolbar) {
-        val activity = requireActivity()
-        if (activity is AppCompatActivity) {
-            activity.setSupportActionBar(toolbar)
-        }
+        (requireActivity() as AppCompatActivity).setSupportActionBar(toolbar)
     }
 
     protected open fun setResult(resultCode: Int = Activity.RESULT_CANCELED, data: Intent? = null) {

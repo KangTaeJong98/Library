@@ -32,7 +32,7 @@ abstract class NavigationActivity<VB: ViewDataBinding>(
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration)
+        return super.onSupportNavigateUp() || navController.navigateUp(appBarConfiguration)
     }
 
     override fun finish() {

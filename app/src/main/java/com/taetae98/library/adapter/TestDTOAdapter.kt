@@ -4,13 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.DiffUtil
+import com.taetae98.library.BR
 import com.taetae98.library.databinding.HolderDtoBinding
 import com.taetae98.library.dto.TestDTO
+import com.taetae98.modules.library.base.BaseRecyclerViewAdapter
 import com.taetae98.modules.library.base.BaseViewHolder
-import com.taetae98.modules.library.binding.BindingRecyclerViewAdapter
 import com.taetae98.modules.library.binding.BindingViewHolder
 
-class TestDTOAdapter(viewLifecycleOwner: LifecycleOwner? = null) : BindingRecyclerViewAdapter<TestDTO>(diffCallback, viewLifecycleOwner) {
+class TestDTOAdapter : BaseRecyclerViewAdapter<TestDTO>(diffCallback) {
     companion object {
         private val diffCallback = object : DiffUtil.ItemCallback<TestDTO>() {
             override fun areItemsTheSame(oldItem: TestDTO, newItem: TestDTO): Boolean {
@@ -27,14 +28,11 @@ class TestDTOAdapter(viewLifecycleOwner: LifecycleOwner? = null) : BindingRecycl
         return TestTDOHolder(
             HolderDtoBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
-            ), viewLifecycleOwner
+            )
         )
     }
 
-    inner class TestTDOHolder(binding: HolderDtoBinding, viewLifecycleOwner: LifecycleOwner?) : BindingViewHolder<TestDTO, HolderDtoBinding>(binding, viewLifecycleOwner) {
-        override fun onBindViewHolder(item: TestDTO) {
-            super.onBindViewHolder(item)
-            binding.testDto = item
-        }
+    inner class TestTDOHolder(binding: HolderDtoBinding) : BindingViewHolder<TestDTO, HolderDtoBinding>(binding) {
+        override val itemId = BR.testDto
     }
 }
