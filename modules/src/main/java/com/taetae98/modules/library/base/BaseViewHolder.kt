@@ -10,10 +10,8 @@ abstract class BaseViewHolder<T: Any>(itemView: View) : RecyclerView.ViewHolder(
             return itemView.context
         }
 
-    lateinit var item: T
-
     open fun onBindViewHolder(item: T) {
-        this.item = item
+
     }
 
     open fun onBindViewHolder(item: T, payload: MutableList<Any>) {

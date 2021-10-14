@@ -9,6 +9,7 @@ import com.taetae98.library.database.AppDatabase
 import com.taetae98.library.databinding.FragmentMainBinding
 import com.taetae98.library.dto.TestDTO
 import com.taetae98.modules.library.binding.BindingFragment
+import com.taetae98.modules.library.util.SimpleSelectionTracker
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -35,6 +36,8 @@ class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main
         with(binding.recyclerView) {
             adapter = testDTOAdapter
         }
+
+        testDTOAdapter.selectionTracker = SimpleSelectionTracker(binding.recyclerView)
     }
 
     override fun onCreateViewDataBinding() {

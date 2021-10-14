@@ -3,7 +3,7 @@
 ### Reduce boiler plate code for databinding and navigation components
 ***
 ### 🐘Dependency
-#### Latest Version : 7.0.0
+#### Latest Version : 7.0.1
 [more(Maven, sbt, leiningen)](https://jitpack.io/#KangTaeJong98/Library)
 ```kotlin
 allprojects {
@@ -87,6 +87,7 @@ class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_m
 * BaseDialogFragment
 * BaseBottomSheetDialogFragment
 * BaseRecyclerViewAdapter
+* BaseRecyclerViewPagingAdapter
 * BaseViewHolder
 * BaseDao
 
@@ -95,10 +96,20 @@ class MainActivity : NavigationActivity<ActivityMainBinding>(R.layout.activity_m
 * BindingFragment
 * BindingDialogFragment
 * BindingBottomSheetDialogFragment
-* BindingViewHolder
 
 #### Navigation
 * NavigationActivity
 * NavigationFragment
 * NavigationDialogFragment
 * NavigationBottomSheetDialogFragment
+
+#### Util
+* PermissionManager
+* SimpleSelectionTracker
+* SpaceItemDecoration
+
+#### Extend Function
+* Int.toDP(): Int
+* Float.toDP(): Float
+* Bitmap.toByteArray(format: Bitmap.CompressFormat = Bitmap.CompressFormat.PNG, quality: Int = 100): ByteArray
+* Bitmap.toByteArrayOutputStream(format: Bitmap.CompressFormat = Bitmap.CompressFormat.PNG, quality: Int = 100): ByteArrayOutputStream
