@@ -8,17 +8,21 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.taetae98.modules.library.base.BaseBottomSheetDialogFragment
+import com.taetae98.modules.library.base.BaseFragment
 
 abstract class BindingBottomSheetDialogFragment<VB: ViewDataBinding>(
     @LayoutRes
-    layoutRes: Int
-) : BaseBottomSheetDialogFragment() {
-    protected val binding: VB by lazy {
-        DataBindingUtil.inflate(layoutInflater, layoutRes, null ,false)
-    }
+    private val layoutRes: Int
+) : BaseFragment() {
+    private var _binding: VB? = null
+    protected val binding: VB
+        get() {
+            return _binding!!
+        }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
+        _binding = DataBindingUtil.inflate(layoutInflater, layoutRes, container, false)
         onCreateViewDataBinding()
 
         return binding.root
@@ -26,5 +30,10 @@ abstract class BindingBottomSheetDialogFragment<VB: ViewDataBinding>(
 
     protected open fun onCreateViewDataBinding() {
         binding.lifecycleOwner = viewLifecycleOwner
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -11,14 +11,17 @@ import com.taetae98.modules.library.base.BaseFragment
 
 abstract class BindingFragment<VB: ViewDataBinding>(
     @LayoutRes
-    layoutRes: Int
+    private val layoutRes: Int
 ) : BaseFragment() {
-    protected val binding: VB by lazy {
-        DataBindingUtil.inflate(layoutInflater, layoutRes, null ,false)
-    }
+    private var _binding: VB? = null
+    protected val binding: VB
+        get() {
+            return _binding!!
+        }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
+        _binding = DataBindingUtil.inflate(layoutInflater, layoutRes, container, false)
         onCreateViewDataBinding()
 
         return binding.root
@@ -26,5 +29,10 @@ abstract class BindingFragment<VB: ViewDataBinding>(
 
     protected open fun onCreateViewDataBinding() {
         binding.lifecycleOwner = viewLifecycleOwner
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
