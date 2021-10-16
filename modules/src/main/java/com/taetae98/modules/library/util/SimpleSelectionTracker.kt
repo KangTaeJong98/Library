@@ -38,7 +38,8 @@ class SimpleSelectionTracker(
         }
 
         override fun getPosition(key: Long): Int {
-            return tracker.recyclerView.findViewHolderForItemId(key).bindingAdapterPosition
+            val holder = tracker.recyclerView.findViewHolderForItemId(key) ?: return RecyclerView.NO_POSITION
+            return holder.bindingAdapterPosition
         }
     }
 
