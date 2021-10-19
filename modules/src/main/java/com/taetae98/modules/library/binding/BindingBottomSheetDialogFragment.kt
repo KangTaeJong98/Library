@@ -13,7 +13,7 @@ import com.taetae98.modules.library.base.BaseFragment
 abstract class BindingBottomSheetDialogFragment<VB: ViewDataBinding>(
     @LayoutRes
     private val layoutRes: Int
-) : BaseFragment() {
+) : BaseBottomSheetDialogFragment() {
     private var _binding: VB? = null
     protected val binding: VB
         get() {
