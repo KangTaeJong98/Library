@@ -15,7 +15,8 @@ class SimpleSelectionTracker(
 ) {
     companion object {
         private const val ID = "com.taetae98.modules.library.util.SimpleSelectionTracker"
-        const val NO_LENGTH_LIMIT = 0
+
+        const val NO_LENGTH_LIMIT = -1
     }
 
     val instance by lazy {
