@@ -10,6 +10,12 @@ abstract class NavigationFragment<VB: ViewDataBinding>(
     @LayoutRes
     layoutRes: Int
 ) : BindingFragment<VB>(layoutRes) {
+    protected open fun navigateUp() {
+        if (!findNavController().navigateUp()) {
+            finish()
+        }
+    }
+
     protected open fun setResultValue(key: String, value: Any) {
         findNavController().previousBackStackEntry?.savedStateHandle?.set(key, value)
     }
