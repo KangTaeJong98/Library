@@ -40,8 +40,8 @@ class MainFragment : BindingFragment<FragmentMainBinding>(R.layout.fragment_main
         testDTOAdapter.selectionTracker = SimpleSelectionTracker(binding.recyclerView)
     }
 
-    override fun onCreateViewDataBinding() {
-        super.onCreateViewDataBinding()
+    override fun onBindingCreated() {
+        super.onBindingCreated()
         binding.setOnAdd {
             CoroutineScope(Dispatchers.IO).launch {
                 val index = testDTOAdapter.itemCount

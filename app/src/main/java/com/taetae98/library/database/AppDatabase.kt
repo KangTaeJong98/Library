@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-@Database(entities = [TestDTO::class], views = [], version = 1, exportSchema = true)
+@Database(entities = [TestDTO::class], views = [], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     companion object {
         const val DATABASE_NAME = "test.db"

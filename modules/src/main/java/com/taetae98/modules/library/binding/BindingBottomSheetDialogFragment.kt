@@ -26,6 +26,7 @@ abstract class BindingBottomSheetDialogFragment<VB: ViewDataBinding>(
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
         _binding = DataBindingUtil.inflate<VB>(layoutInflater, layoutRes, container, false).also {
+            _binding = it
             onBindingCreated()
         }
 
