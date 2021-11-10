@@ -21,18 +21,23 @@ abstract class BindingFragment<VB: ViewDataBinding>(
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         super.onCreateView(inflater, container, savedInstanceState)
-        _binding = DataBindingUtil.inflate(layoutInflater, layoutRes, container, false)
-        onCreateViewDataBinding()
+        _binding = DataBindingUtil.inflate<VB>(layoutInflater, layoutRes, container, false).also {
+            onBindingCreated()
+        }
 
         return binding.root
     }
 
-    protected open fun onCreateViewDataBinding() {
+    protected open fun onBindingCreated() {
         binding.lifecycleOwner = viewLifecycleOwner
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    protected fun isBindingAvailable(): Boolean {
+        return _binding != null
     }
 }
